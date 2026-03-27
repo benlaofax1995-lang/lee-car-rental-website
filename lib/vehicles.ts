@@ -272,28 +272,20 @@ export function getVehicle(id: string): Vehicle | undefined {
   return VEHICLES.find((v) => v.id === id)
 }
 
-// Wikipedia Commons photos — free, no watermark, model-specific
-const VEHICLE_PHOTOS: Record<string, string> = {
-  'Transit':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/2016_Ford_Transit_350_2.2.jpg/800px-2016_Ford_Transit_350_2.2.jpg',
-  'Transit-150 Wagon':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Ford_E-Series_wagon.jpg/800px-Ford_E-Series_wagon.jpg',
-  'Bronco Sport':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2021_Ford_Bronco_Sport_Big_Bend%2C_front_3.15.21.jpg/800px-2021_Ford_Bronco_Sport_Big_Bend%2C_front_3.15.21.jpg',
-  'Pathfinder':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/2023_Nissan_Pathfinder_Platinum_4WD_in_Baja_Storm_Metallic%2C_front_left.jpg/800px-2023_Nissan_Pathfinder_Platinum_4WD_in_Baja_Storm_Metallic%2C_front_left.jpg',
-  'Kicks':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/2025_Nissan_Kicks_SV_AWD_in_Deep_Blue_Pearl%2C_front_right%2C_2024-10-06.jpg/800px-2025_Nissan_Kicks_SV_AWD_in_Deep_Blue_Pearl%2C_front_right%2C_2024-10-06.jpg',
-  'Rogue':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/2023_Nissan_Rogue_SV_in_Super_Black%2C_front_left.jpg/800px-2023_Nissan_Rogue_SV_in_Super_Black%2C_front_left.jpg',
-  'Sentra':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/2024_Nissan_Sentra_%28B18%29_DSC_3754.jpg/800px-2024_Nissan_Sentra_%28B18%29_DSC_3754.jpg',
-  'Challenger':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Dodge_Challenger_SRT8_%282015%29_Hirschaid-20220709-RM-120221_%28cropped%29.jpg/800px-Dodge_Challenger_SRT8_%282015%29_Hirschaid-20220709-RM-120221_%28cropped%29.jpg',
-  'C-HR':
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Toyota_C-HR_Hybrid_%28AX20%29_DSC_7239.jpg/800px-Toyota_C-HR_Hybrid_%28AX20%29_DSC_7239.jpg',
+// Pexels CDN — verified working, free for commercial use
+const VEHICLE_PHOTOS: Record<string, number> = {
+  'Transit':          1187677,  // White Ford Transit passenger van
+  'Transit-150 Wagon': 18687549, // White passenger van
+  'Bronco Sport':     116675,   // Clean SUV exterior
+  'Pathfinder':       15804227, // Nissan Pathfinder
+  'Kicks':            12163946, // Compact crossover
+  'Rogue':            29076350, // SUV on scenic road
+  'C-HR':             5834909,  // Compact crossover coupe
+  'Sentra':           15223537, // Nissan Sentra
+  'Challenger':       10854772, // Dodge Challenger
 }
 
 export function getVehicleImageUrl(vehicle: Vehicle): string {
-  return VEHICLE_PHOTOS[vehicle.model] ?? VEHICLE_PHOTOS['Rogue']!
+  const id = VEHICLE_PHOTOS[vehicle.model] ?? 29076350
+  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop`
 }
