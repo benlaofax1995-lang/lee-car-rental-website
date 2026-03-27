@@ -271,3 +271,13 @@ export const VEHICLES: Vehicle[] = [
 export function getVehicle(id: string): Vehicle | undefined {
   return VEHICLES.find((v) => v.id === id)
 }
+
+export function getVehicleImageUrl(vehicle: Vehicle): string {
+  const make = vehicle.make.toLowerCase()
+  let model = vehicle.model.toLowerCase()
+  if (model.startsWith('transit')) model = 'transit'
+  else if (model === 'bronco sport') model = 'bronco-sport'
+  else if (model === 'c-hr') model = 'c-hr'
+  else model = model.replace(/\s+/g, '-')
+  return `https://cdn.imagin.studio/getimage?customer=img&make=${make}&modelFamily=${model}&modelYear=${vehicle.year}&angle=23&width=800`
+}

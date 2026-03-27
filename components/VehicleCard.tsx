@@ -1,19 +1,21 @@
 import { Users, Star, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 import type { Vehicle } from '@/lib/vehicles'
+import { getVehicleImageUrl } from '@/lib/vehicles'
 
 export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   return (
     <div className="bg-navy-800 border border-white/8 rounded-2xl overflow-hidden hover:border-brand-500/40 transition-all duration-300 group flex flex-col">
       {/* Image */}
       <div className="relative h-48 bg-navy-700 overflow-hidden">
-        <div className="w-full h-full flex items-center justify-center text-gray-600">
-          <div className="text-center">
-            <div className="text-5xl mb-2">
-              {vehicle.category === 'Van' ? '🚐' : vehicle.category === 'Sports' ? '🏎️' : vehicle.category === 'Sedan' ? '🚗' : '🚙'}
-            </div>
-            <div className="text-xs text-gray-500">Photo coming soon</div>
-          </div>
-        </div>
+        <Image
+          src={getVehicleImageUrl(vehicle)}
+          alt={vehicle.name}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent" />
         <div className="absolute top-3 left-3">
           <span className="bg-navy-900/80 backdrop-blur text-xs text-gray-300 px-2 py-1 rounded-full border border-white/10">
             {vehicle.category}
