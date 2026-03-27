@@ -67,7 +67,7 @@ export default function Home() {
                 ))}
                 <div className="pt-2" style={{borderTop: '1px solid rgba(255,255,255,0.08)'}}>
                   <div className="text-gray-500 text-xs">Starting from</div>
-                  <div className="text-3xl font-black text-white">$75<span className="text-base font-normal text-gray-500">/day</span></div>
+                  <div className="text-3xl font-black text-white">$39<span className="text-base font-normal text-gray-500">/day</span></div>
                 </div>
               </div>
             </div>

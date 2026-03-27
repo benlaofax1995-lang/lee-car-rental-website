@@ -8,7 +8,9 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
       <div className="relative h-48 bg-navy-700 overflow-hidden">
         <div className="w-full h-full flex items-center justify-center text-gray-600">
           <div className="text-center">
-            <div className="text-5xl mb-2">🚐</div>
+            <div className="text-5xl mb-2">
+              {vehicle.category === 'Van' ? '🚐' : vehicle.category === 'Sports' ? '🏎️' : vehicle.category === 'Sedan' ? '🚗' : '🚙'}
+            </div>
             <div className="text-xs text-gray-500">Photo coming soon</div>
           </div>
         </div>
@@ -74,9 +76,6 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
               ${vehicle.dailyRate}
               <span className="text-sm font-normal text-gray-500">/day</span>
             </div>
-            {vehicle.weeklyRate && (
-              <div className="text-xs text-brand-500">${vehicle.weeklyRate}/week — save ${(vehicle.dailyRate * 7 - vehicle.weeklyRate)}</div>
-            )}
           </div>
         </div>
 
