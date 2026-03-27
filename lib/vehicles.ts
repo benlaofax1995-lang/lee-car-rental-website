@@ -272,12 +272,19 @@ export function getVehicle(id: string): Vehicle | undefined {
   return VEHICLES.find((v) => v.id === id)
 }
 
+const PEXELS_PHOTOS: Record<string, number> = {
+  Transit:        1187677,   // White Ford Transit van
+  'Transit-150 Wagon': 18687549, // White passenger van
+  Pathfinder:     15804227,  // Nissan Pathfinder
+  'Bronco Sport': 13811113,  // Ford Bronco
+  Rogue:          29076350,  // SUV sunset
+  Kicks:          12163946,  // Compact crossover
+  'C-HR':         12163946,  // Similar coupe-SUV
+  Sentra:         15223537,  // Actual Nissan Sentra
+  Challenger:     10854772,  // Red Dodge Challenger
+}
+
 export function getVehicleImageUrl(vehicle: Vehicle): string {
-  const make = vehicle.make.toLowerCase()
-  let model = vehicle.model.toLowerCase()
-  if (model.startsWith('transit')) model = 'transit'
-  else if (model === 'bronco sport') model = 'bronco-sport'
-  else if (model === 'c-hr') model = 'c-hr'
-  else model = model.replace(/\s+/g, '-')
-  return `https://cdn.imagin.studio/getimage?customer=img&make=${make}&modelFamily=${model}&modelYear=${vehicle.year}&angle=23&width=800`
+  const id = PEXELS_PHOTOS[vehicle.model] ?? 116675
+  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop`
 }
