@@ -1,5 +1,4 @@
 import { Users, Star, ExternalLink } from 'lucide-react'
-import Image from 'next/image'
 import type { Vehicle } from '@/lib/vehicles'
 import { getVehicleImageUrl } from '@/lib/vehicles'
 
@@ -8,13 +7,13 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
     <div className="bg-navy-800 border border-white/8 rounded-2xl overflow-hidden hover:border-brand-500/40 transition-all duration-300 group flex flex-col">
       {/* Image */}
       <div className="relative h-48 bg-navy-700 overflow-hidden">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={getVehicleImageUrl(vehicle)}
           alt={vehicle.name}
-          fill
-          className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           style={{objectPosition: 'center 60%'}}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent" />
         <div className="absolute top-3 left-3">
