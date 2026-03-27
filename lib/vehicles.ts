@@ -205,6 +205,21 @@ export const VEHICLES: Vehicle[] = [
 
   // ── Sedans ────────────────────────────────────────────────────
   {
+    id: 'nissan-sentra-3099964',
+    name: '2025 Nissan Sentra',
+    year: 2025,
+    make: 'Nissan',
+    model: 'Sentra',
+    category: 'Sedan',
+    description: 'Brand new 2025 Nissan Sentra. Fuel-efficient, comfortable, and easy to drive — great for business travel, airport runs, and everyday use.',
+    seats: 5,
+    dailyRate: 48,
+    features: ['Apple CarPlay', 'Backup Camera', 'Bluetooth', 'Lane Assist', 'A/C', 'Automatic'],
+    turoUrl: 'https://turo.com/us/en/car-rental/united-states/garden-grove-ca/nissan/sentra/3099964',
+    turoId: '3099964',
+    available: true,
+  },
+  {
     id: 'nissan-sentra-3099976',
     name: '2025 Nissan Sentra',
     year: 2025,
