@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Phone, ExternalLink } from 'lucide-react'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -34,9 +34,10 @@ export default function Navbar() {
             <Phone className="w-4 h-4" />
             (714) 462-6427
           </a>
-          <Link href="/fleet" className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-sm px-4 py-2 rounded-lg transition-colors">
-            Book Now
-          </Link>
+          <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-sm px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+            <ExternalLink className="w-3.5 h-3.5" />
+            Book on Turo
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -55,9 +56,10 @@ export default function Navbar() {
           <a href="tel:7144626427" className="text-gold-500 font-semibold text-sm flex items-center gap-2">
             <Phone className="w-4 h-4" /> (714) 462-6427
           </a>
-          <Link href="/fleet" onClick={() => setOpen(false)} className="bg-gold-500 text-navy-900 font-bold text-sm px-4 py-2.5 rounded-lg text-center">
-            Book Now
-          </Link>
+          <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="bg-gold-500 text-navy-900 font-bold text-sm px-4 py-2.5 rounded-lg text-center flex items-center justify-center gap-1.5">
+            <ExternalLink className="w-3.5 h-3.5" />
+            Book on Turo
+          </a>
         </div>
       )}
     </header>

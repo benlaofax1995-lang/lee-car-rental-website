@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, CheckCircle, Calendar, Car, Shield, Clock, Star } from 'lucide-react'
+import { Phone, Mail, MapPin, CheckCircle, Calendar, Car, Shield, Clock, Star, ExternalLink } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import VehicleCard from '@/components/VehicleCard'
@@ -32,14 +32,14 @@ export default function Home() {
                 New, well-maintained vehicles at affordable rates. Short and long-term rentals available. Private bookings or book directly on Turo.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <Link href="/fleet" style={{background: '#e6a817'}} className="hover:opacity-90 font-bold px-8 py-4 rounded-xl text-base transition-opacity inline-flex items-center justify-center gap-2" >
-                  <Car className="w-5 h-5" style={{color: '#07090f'}} />
-                  <span style={{color: '#07090f'}}>Browse Fleet</span>
-                </Link>
-                <a href="tel:7144626427" className="border border-white/20 hover:border-white/50 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors inline-flex items-center justify-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  Call to Book
+                <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" style={{background: '#e6a817'}} className="hover:opacity-90 font-bold px-8 py-4 rounded-xl text-base transition-opacity inline-flex items-center justify-center gap-2" >
+                  <ExternalLink className="w-5 h-5" style={{color: '#07090f'}} />
+                  <span style={{color: '#07090f'}}>Book on Turo</span>
                 </a>
+                <Link href="/fleet" className="border border-white/20 hover:border-white/50 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors inline-flex items-center justify-center gap-2">
+                  <Car className="w-5 h-5" />
+                  Browse Fleet
+                </Link>
               </div>
             </div>
 
@@ -76,48 +76,44 @@ export default function Home() {
 
         {/* ── How It Works ───────────────────────────────────────── */}
         <section id="how-it-works" className="py-24" style={{background: 'rgba(13,17,32,0.4)'}}>
-          <div className="max-w-6xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4">
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">How It Works</h2>
-              <p className="text-gray-400 text-lg">Two easy ways to rent from us</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">How to Book</h2>
+              <p className="text-gray-400 text-lg">Simple and secure through Turo</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="rounded-2xl p-8" style={{background: '#0d1120', border: '1px solid rgba(230,168,23,0.3)'}}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{background: 'rgba(230,168,23,0.15)'}}>
-                  <span className="font-black text-xl" style={{color: '#e6a817'}}>P</span>
+            <div className="rounded-2xl p-8 md:p-12" style={{background: '#0d1120', border: '1px solid rgba(230,168,23,0.3)'}}>
+              <div className="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(230,168,23,0.15)'}}>
+                    <span className="font-black text-2xl" style={{color: '#e6a817'}}>T</span>
+                  </div>
+                  <h3 className="text-white font-bold text-2xl mb-4">Book on Turo</h3>
+                  <p className="text-gray-400 leading-relaxed mb-6">
+                    All bookings are handled through Turo — a trusted peer-to-peer car sharing platform. Get instant confirmation, flexible protection plans, and a seamless pickup experience.
+                  </p>
+                  <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-xl transition-opacity hover:opacity-90"
+                    style={{background: '#e6a817', color: '#07090f'}}>
+                    <ExternalLink className="w-4 h-4" />
+                    View Our Turo Listings
+                  </a>
                 </div>
-                <h3 className="text-white font-bold text-xl mb-3">Private Booking</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-5">Book directly with us for the best rates. Choose your dates, submit a request, and we&apos;ll confirm within a few hours.</p>
-                <ol className="space-y-3 mb-6">
-                  {['Browse our fleet', 'Pick your vehicle & dates', 'Submit booking request', 'We confirm & coordinate pickup'].map((step, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0" style={{background: 'rgba(230,168,23,0.2)', color: '#f0c040'}}>{i + 1}</span>
-                      <span className="text-gray-300">{step}</span>
+                <ol className="space-y-5">
+                  {[
+                    { step: '1', title: 'Browse our fleet', desc: 'Find the right vehicle for your trip on this page or directly on Turo.' },
+                    { step: '2', title: 'Select your dates', desc: 'Pick your pickup and return dates. Check availability instantly.' },
+                    { step: '3', title: 'Choose a protection plan', desc: 'Turo offers multiple coverage options to fit your needs.' },
+                    { step: '4', title: 'Instant confirmation', desc: 'Get confirmed right away and coordinate pickup details in the Turo app.' },
+                  ].map(({ step, title, desc }) => (
+                    <li key={step} className="flex gap-4">
+                      <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 mt-0.5" style={{background: 'rgba(230,168,23,0.2)', color: '#f0c040'}}>{step}</span>
+                      <div>
+                        <div className="text-white font-semibold text-sm mb-0.5">{title}</div>
+                        <div className="text-gray-500 text-sm">{desc}</div>
+                      </div>
                     </li>
                   ))}
                 </ol>
-                <Link href="/fleet" style={{background: '#e6a817'}} className="hover:opacity-90 font-bold text-sm px-5 py-2.5 rounded-xl inline-block transition-opacity" >
-                  <span style={{color: '#07090f'}}>Book Private →</span>
-                </Link>
-              </div>
-
-              <div className="rounded-2xl p-8" style={{background: '#0d1120', border: '1px solid rgba(255,255,255,0.1)'}}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{background: 'rgba(255,255,255,0.05)'}}>
-                  <span className="text-white font-black text-xl">T</span>
-                </div>
-                <h3 className="text-white font-bold text-xl mb-3">Book via Turo</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-5">Prefer using Turo? Book through our listings for instant confirmation and Turo&apos;s protection plans.</p>
-                <ol className="space-y-3 mb-6">
-                  {['Find our vehicles on Turo', 'Select dates & protection plan', 'Instant confirmation', 'Coordinate pickup in-app'].map((step, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0" style={{background: 'rgba(255,255,255,0.08)', color: '#9ca3af'}}>{i + 1}</span>
-                      <span className="text-gray-300">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-                <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="border border-white/20 hover:border-white/50 text-white font-bold text-sm px-5 py-2.5 rounded-xl inline-block transition-colors">
-                  View on Turo →
-                </a>
               </div>
             </div>
           </div>

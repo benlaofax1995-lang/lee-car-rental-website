@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Users, Star, ExternalLink } from 'lucide-react'
 import type { Vehicle } from '@/lib/vehicles'
 
@@ -8,7 +7,6 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
       {/* Image */}
       <div className="relative h-48 bg-navy-700 overflow-hidden">
         <div className="w-full h-full flex items-center justify-center text-gray-600">
-          {/* Replace with <Image> once you have real photos */}
           <div className="text-center">
             <div className="text-5xl mb-2">🚐</div>
             <div className="text-xs text-gray-500">Photo coming soon</div>
@@ -82,25 +80,17 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
           </div>
         </div>
 
-        {/* Actions */}
-        <div className="flex gap-2">
-          <Link
-            href={`/book/${vehicle.id}`}
-            className="flex-1 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-sm py-2.5 rounded-xl text-center transition-colors"
-          >
-            Book Private
-          </Link>
-          <a
-            href={vehicle.turoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 border border-white/15 hover:border-white/40 text-gray-300 text-sm px-3 py-2.5 rounded-xl transition-colors"
-            title="Book on Turo"
-          >
-            <ExternalLink className="w-4 h-4" />
-            Turo
-          </a>
-        </div>
+        {/* Action */}
+        <a
+          href={vehicle.turoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center justify-center gap-2 font-bold text-sm py-2.5 rounded-xl transition-opacity hover:opacity-90"
+          style={{background: '#e6a817', color: '#07090f'}}
+        >
+          <ExternalLink className="w-4 h-4" />
+          Book on Turo
+        </a>
       </div>
     </div>
   )
