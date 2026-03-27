@@ -16,7 +16,7 @@ export default function FleetPage() {
         <section className="py-16" style={{background: 'rgba(13,17,32,0.6)'}}>
           <div className="max-w-6xl mx-auto px-4">
             <div className="mb-10">
-              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{color: '#e6a817'}}>Available Now</p>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{color: '#ef4444'}}>Available Now</p>
               <h1 className="text-4xl md:text-5xl font-black text-white mb-3">Our Fleet</h1>
               <p className="text-gray-400 text-lg max-w-xl">
                 All vehicles are clean, fully insured, and regularly maintained. Private bookings get the best rates — no platform fees.

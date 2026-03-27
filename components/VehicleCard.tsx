@@ -3,7 +3,7 @@ import type { Vehicle } from '@/lib/vehicles'
 
 export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   return (
-    <div className="bg-navy-800 border border-white/8 rounded-2xl overflow-hidden hover:border-gold-500/40 transition-all duration-300 group flex flex-col">
+    <div className="bg-navy-800 border border-white/8 rounded-2xl overflow-hidden hover:border-brand-500/40 transition-all duration-300 group flex flex-col">
       {/* Image */}
       <div className="relative h-48 bg-navy-700 overflow-hidden">
         <div className="w-full h-full flex items-center justify-center text-gray-600">
@@ -62,7 +62,7 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
             {vehicle.seats} seats
           </span>
           <span className="flex items-center gap-1">
-            <Star className="w-3.5 h-3.5 text-gold-500" />
+            <Star className="w-3.5 h-3.5 text-brand-500" />
             On Turo
           </span>
         </div>
@@ -75,7 +75,7 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
               <span className="text-sm font-normal text-gray-500">/day</span>
             </div>
             {vehicle.weeklyRate && (
-              <div className="text-xs text-gold-500">${vehicle.weeklyRate}/week — save ${(vehicle.dailyRate * 7 - vehicle.weeklyRate)}</div>
+              <div className="text-xs text-brand-500">${vehicle.weeklyRate}/week — save ${(vehicle.dailyRate * 7 - vehicle.weeklyRate)}</div>
             )}
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
           target="_blank"
           rel="noopener noreferrer"
           className="w-full flex items-center justify-center gap-2 font-bold text-sm py-2.5 rounded-xl transition-opacity hover:opacity-90"
-          style={{background: '#e6a817', color: '#07090f'}}
+          style={{background: '#ef4444', color: '#07090f'}}
         >
           <ExternalLink className="w-4 h-4" />
           Book on Turo

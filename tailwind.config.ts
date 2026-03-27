@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          400: '#f0c040',
-          500: '#e6a817',
-          600: '#c8920f',
+        brand: {
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
         },
         navy: {
           900: '#0a0e1a',

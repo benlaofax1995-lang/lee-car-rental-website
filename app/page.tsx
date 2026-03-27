@@ -14,25 +14,25 @@ export default function Home() {
         {/* ── Hero ──────────────────────────────────────────────── */}
         <section className="relative min-h-[92vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
-          <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at top right, rgba(230,168,23,0.12), transparent 60%)'}} />
+          <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at top right, rgba(239,68,68,0.12), transparent 60%)'}} />
           <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
 
           <div className="relative max-w-6xl mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 mb-6" style={{background: 'rgba(230,168,23,0.1)', borderColor: 'rgba(230,168,23,0.2)'}}>
-                <span className="w-2 h-2 rounded-full animate-pulse" style={{background: '#e6a817'}} />
-                <span className="text-xs font-semibold tracking-wide uppercase" style={{color: '#f0c040'}}>Garden Grove, CA</span>
+              <div className="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 mb-6" style={{background: 'rgba(239,68,68,0.1)', borderColor: 'rgba(239,68,68,0.2)'}}>
+                <span className="w-2 h-2 rounded-full animate-pulse" style={{background: '#ef4444'}} />
+                <span className="text-xs font-semibold tracking-wide uppercase" style={{color: '#f87171'}}>Garden Grove, CA</span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight mb-6">
                 <span className="text-white">TOP CAR</span><br />
-                <span style={{color: '#e6a817'}}>RENTAL</span><br />
+                <span style={{color: '#ef4444'}}>RENTAL</span><br />
                 <span className="text-white">DEALS</span>
               </h1>
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
                 New, well-maintained vehicles at affordable rates. Short and long-term rentals available. Private bookings or book directly on Turo.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" style={{background: '#e6a817'}} className="hover:opacity-90 font-bold px-8 py-4 rounded-xl text-base transition-opacity inline-flex items-center justify-center gap-2" >
+                <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" style={{background: '#ef4444'}} className="hover:opacity-90 font-bold px-8 py-4 rounded-xl text-base transition-opacity inline-flex items-center justify-center gap-2" >
                   <ExternalLink className="w-5 h-5" style={{color: '#07090f'}} />
                   <span style={{color: '#07090f'}}>Book on Turo</span>
                 </a>
@@ -46,8 +46,8 @@ export default function Home() {
             <div className="flex-shrink-0 w-full max-w-xs lg:max-w-sm">
               <div className="rounded-2xl p-6 space-y-4" style={{background: 'rgba(13,17,32,0.8)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)'}}>
                 <div className="flex items-center gap-3 pb-4" style={{borderBottom: '1px solid rgba(255,255,255,0.08)'}}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background: 'rgba(230,168,23,0.15)'}}>
-                    <Star className="w-5 h-5" style={{color: '#e6a817'}} />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background: 'rgba(239,68,68,0.15)'}}>
+                    <Star className="w-5 h-5" style={{color: '#ef4444'}} />
                   </div>
                   <div>
                     <div className="text-white font-bold">Highly Rated</div>
@@ -58,7 +58,7 @@ export default function Home() {
                   { icon: CheckCircle, label: 'Clean, inspected vehicles', color: '#4ade80' },
                   { icon: Clock, label: '24/7 customer support', color: '#60a5fa' },
                   { icon: Shield, label: 'Fully insured fleet', color: '#c084fc' },
-                  { icon: Calendar, label: 'Flexible rental periods', color: '#e6a817' },
+                  { icon: Calendar, label: 'Flexible rental periods', color: '#ef4444' },
                 ].map(({ icon: Icon, label, color }) => (
                   <div key={label} className="flex items-center gap-3">
                     <Icon className="w-4 h-4 flex-shrink-0" style={{color}} />
@@ -81,11 +81,11 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">How to Book</h2>
               <p className="text-gray-400 text-lg">Simple and secure through Turo</p>
             </div>
-            <div className="rounded-2xl p-8 md:p-12" style={{background: '#0d1120', border: '1px solid rgba(230,168,23,0.3)'}}>
+            <div className="rounded-2xl p-8 md:p-12" style={{background: '#0d1120', border: '1px solid rgba(239,68,68,0.3)'}}>
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div>
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(230,168,23,0.15)'}}>
-                    <span className="font-black text-2xl" style={{color: '#e6a817'}}>T</span>
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{background: 'rgba(239,68,68,0.15)'}}>
+                    <span className="font-black text-2xl" style={{color: '#ef4444'}}>T</span>
                   </div>
                   <h3 className="text-white font-bold text-2xl mb-4">Book on Turo</h3>
                   <p className="text-gray-400 leading-relaxed mb-6">
@@ -93,7 +93,7 @@ export default function Home() {
                   </p>
                   <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-xl transition-opacity hover:opacity-90"
-                    style={{background: '#e6a817', color: '#07090f'}}>
+                    style={{background: '#ef4444', color: '#07090f'}}>
                     <ExternalLink className="w-4 h-4" />
                     View Our Turo Listings
                   </a>
@@ -106,7 +106,7 @@ export default function Home() {
                     { step: '4', title: 'Instant confirmation', desc: 'Get confirmed right away and coordinate pickup details in the Turo app.' },
                   ].map(({ step, title, desc }) => (
                     <li key={step} className="flex gap-4">
-                      <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 mt-0.5" style={{background: 'rgba(230,168,23,0.2)', color: '#f0c040'}}>{step}</span>
+                      <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 mt-0.5" style={{background: 'rgba(239,68,68,0.2)', color: '#f87171'}}>{step}</span>
                       <div>
                         <div className="text-white font-semibold text-sm mb-0.5">{title}</div>
                         <div className="text-gray-500 text-sm">{desc}</div>
@@ -127,7 +127,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Our Fleet</h2>
                 <p className="text-gray-400">All vehicles are clean, insured, and well-maintained</p>
               </div>
-              <Link href="/fleet" className="hidden sm:block text-sm font-semibold transition-colors" style={{color: '#e6a817'}}>
+              <Link href="/fleet" className="hidden sm:block text-sm font-semibold transition-colors" style={{color: '#ef4444'}}>
                 View All →
               </Link>
             </div>
@@ -173,7 +173,7 @@ export default function Home() {
                 { title: 'Flexible Pickup', desc: 'Convenient pickup in Garden Grove, CA.' },
               ].map(({ title, desc }) => (
                 <div key={title} className="flex gap-4">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{color: '#e6a817'}} />
+                  <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{color: '#ef4444'}} />
                   <div>
                     <div className="text-white font-semibold text-sm">{title}</div>
                     <div className="text-gray-500 text-sm">{desc}</div>
@@ -200,8 +200,8 @@ export default function Home() {
                 <a key={label} href={href} target={label === 'Address' ? '_blank' : undefined} rel="noopener noreferrer"
                   className="rounded-2xl p-6 text-center transition-all group block"
                   style={{background: '#0d1120', border: '1px solid rgba(255,255,255,0.08)'}}>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 transition-colors" style={{background: 'rgba(230,168,23,0.1)'}}>
-                    <Icon className="w-5 h-5" style={{color: '#e6a817'}} />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 transition-colors" style={{background: 'rgba(239,68,68,0.1)'}}>
+                    <Icon className="w-5 h-5" style={{color: '#ef4444'}} />
                   </div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-2">{label}</div>
                   <div className="text-white font-semibold text-sm whitespace-pre-line">{value}</div>

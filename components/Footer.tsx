@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-gold-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center">
               <span className="text-navy-900 font-black text-sm">L</span>
             </div>
             <div>
@@ -25,10 +25,10 @@ export default function Footer() {
         <div>
           <div className="text-white font-semibold text-sm mb-4 tracking-wide uppercase">Quick Links</div>
           <div className="flex flex-col gap-2">
-            <Link href="/fleet" className="text-gray-400 hover:text-gold-400 text-sm transition-colors">Browse Fleet</Link>
-            <Link href="/#how-it-works" className="text-gray-400 hover:text-gold-400 text-sm transition-colors">How It Works</Link>
-            <Link href="/#about" className="text-gray-400 hover:text-gold-400 text-sm transition-colors">About Us</Link>
-            <Link href="/#contact" className="text-gray-400 hover:text-gold-400 text-sm transition-colors">Contact</Link>
+            <Link href="/fleet" className="text-gray-400 hover:text-brand-400 text-sm transition-colors">Browse Fleet</Link>
+            <Link href="/#how-it-works" className="text-gray-400 hover:text-brand-400 text-sm transition-colors">How It Works</Link>
+            <Link href="/#about" className="text-gray-400 hover:text-brand-400 text-sm transition-colors">About Us</Link>
+            <Link href="/#contact" className="text-gray-400 hover:text-brand-400 text-sm transition-colors">Contact</Link>
           </div>
         </div>
 
@@ -36,11 +36,11 @@ export default function Footer() {
         <div>
           <div className="text-white font-semibold text-sm mb-4 tracking-wide uppercase">Contact</div>
           <div className="flex flex-col gap-3">
-            <a href="tel:7144626427" className="flex items-center gap-2 text-gray-400 hover:text-gold-400 text-sm transition-colors">
+            <a href="tel:7144626427" className="flex items-center gap-2 text-gray-400 hover:text-brand-400 text-sm transition-colors">
               <Phone className="w-4 h-4 flex-shrink-0" />
               (714) 462-6427
             </a>
-            <a href="mailto:support@leecarrental.com" className="flex items-center gap-2 text-gray-400 hover:text-gold-400 text-sm transition-colors">
+            <a href="mailto:support@leecarrental.com" className="flex items-center gap-2 text-gray-400 hover:text-brand-400 text-sm transition-colors">
               <Mail className="w-4 h-4 flex-shrink-0" />
               support@leecarrental.com
             </a>

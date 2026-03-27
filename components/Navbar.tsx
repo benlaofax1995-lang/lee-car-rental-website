@@ -11,12 +11,12 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-gold-500 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center">
             <span className="text-navy-900 font-black text-sm">L</span>
           </div>
           <div className="leading-tight">
             <div className="text-white font-bold text-sm tracking-wide">LEE CAR</div>
-            <div className="text-gold-500 font-bold text-xs tracking-widest">RENTAL</div>
+            <div className="text-brand-500 font-bold text-xs tracking-widest">RENTAL</div>
           </div>
         </Link>
 
@@ -30,11 +30,11 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="tel:7144626427" className="flex items-center gap-1.5 text-gold-500 hover:text-gold-400 text-sm font-semibold transition-colors">
+          <a href="tel:7144626427" className="flex items-center gap-1.5 text-brand-500 hover:text-brand-400 text-sm font-semibold transition-colors">
             <Phone className="w-4 h-4" />
             (714) 462-6427
           </a>
-          <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-sm px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+          <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="bg-brand-500 hover:bg-brand-600 text-navy-900 font-bold text-sm px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
             <ExternalLink className="w-3.5 h-3.5" />
             Book on Turo
           </a>
@@ -53,10 +53,10 @@ export default function Navbar() {
           <Link href="/#how-it-works" onClick={() => setOpen(false)} className="text-gray-300 hover:text-white text-sm font-medium">How It Works</Link>
           <Link href="/#about" onClick={() => setOpen(false)} className="text-gray-300 hover:text-white text-sm font-medium">About</Link>
           <Link href="/#contact" onClick={() => setOpen(false)} className="text-gray-300 hover:text-white text-sm font-medium">Contact</Link>
-          <a href="tel:7144626427" className="text-gold-500 font-semibold text-sm flex items-center gap-2">
+          <a href="tel:7144626427" className="text-brand-500 font-semibold text-sm flex items-center gap-2">
             <Phone className="w-4 h-4" /> (714) 462-6427
           </a>
-          <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="bg-gold-500 text-navy-900 font-bold text-sm px-4 py-2.5 rounded-lg text-center flex items-center justify-center gap-1.5">
+          <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="bg-brand-500 text-navy-900 font-bold text-sm px-4 py-2.5 rounded-lg text-center flex items-center justify-center gap-1.5">
             <ExternalLink className="w-3.5 h-3.5" />
             Book on Turo
           </a>
