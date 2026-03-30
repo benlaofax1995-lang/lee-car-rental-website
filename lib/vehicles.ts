@@ -272,20 +272,23 @@ export function getVehicle(id: string): Vehicle | undefined {
   return VEHICLES.find((v) => v.id === id)
 }
 
-// Pexels CDN — verified working, free for commercial use
-const VEHICLE_PHOTOS: Record<string, number> = {
-  'Transit':          1187677,  // White Ford Transit passenger van
-  'Transit-150 Wagon': 18687549, // White passenger van
-  'Bronco Sport':     116675,   // Clean SUV exterior
-  'Pathfinder':       15804227, // Nissan Pathfinder
-  'Kicks':            12163946, // Compact crossover
-  'Rogue':            29076350, // SUV on scenic road
-  'C-HR':             5834909,  // Compact crossover coupe
-  'Sentra':           15223537, // Nissan Sentra
-  'Challenger':       10854772, // Dodge Challenger
+// Vehicle photos — Pexels CDN (free, no watermarks, no attribution required)
+const VEHICLE_PHOTOS: Record<string, { src: 'pexels' | 'unsplash'; id: string }> = {
+  'Transit':           { src: 'pexels',   id: '36377065' },  // Modern Ford Transit passenger van
+  'Transit-150 Wagon': { src: 'pexels',   id: '36377065' },  // Modern Ford Transit passenger van
+  'Bronco Sport':      { src: 'pexels',   id: '29753501' },  // Ford Bronco SUV
+  'Pathfinder':        { src: 'pexels',   id: '15804227' },  // Nissan Pathfinder
+  'Kicks':             { src: 'unsplash', id: 'photo-1728315640904-b38019d170a1' }, // Toyota C-HR style crossover
+  'Rogue':             { src: 'pexels',   id: '11798451' },  // Nissan Rogue
+  'C-HR':              { src: 'unsplash', id: 'photo-1728315640904-b38019d170a1' }, // Toyota C-HR
+  'Sentra':            { src: 'pexels',   id: '15223537' },  // Nissan Sentra
+  'Challenger':        { src: 'pexels',   id: '10854772' },  // Dodge Challenger
 }
 
 export function getVehicleImageUrl(vehicle: Vehicle): string {
-  const id = VEHICLE_PHOTOS[vehicle.model] ?? 29076350
-  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop`
+  const photo = VEHICLE_PHOTOS[vehicle.model] ?? { src: 'pexels', id: '15804227' }
+  if (photo.src === 'unsplash') {
+    return `https://images.unsplash.com/${photo.id}?w=800&h=450&fit=crop&auto=format`
+  }
+  return `https://images.pexels.com/photos/${photo.id}/pexels-photo-${photo.id}.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop`
 }
