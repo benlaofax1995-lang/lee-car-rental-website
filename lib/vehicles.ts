@@ -274,9 +274,9 @@ export function getVehicle(id: string): Vehicle | undefined {
 
 // Pexels CDN — free, no watermarks, no attribution required
 const VEHICLE_PHOTOS: Record<string, number> = {
-  'Transit':           33632445,  // White Ford Transit passenger van
-  'Transit-150 Wagon': 33632445,  // White Ford Transit passenger van
-  'Bronco Sport':      29753501,  // Ford Bronco SUV
+  'Transit':           36377064,  // Modern Ford Transit passenger van
+  'Transit-150 Wagon': 36377064,  // Modern Ford Transit passenger van
+  'Bronco Sport':      10918019,  // Ford Bronco Sport compact SUV
   'Pathfinder':        15804227,  // Nissan Pathfinder
   'Kicks':             20043211,  // Nissan Kicks on road
   'Rogue':             32536599,  // White Nissan Rogue (current gen)
