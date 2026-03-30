@@ -46,7 +46,7 @@ export default function Home() {
             <div className="flex-shrink-0 w-full max-w-xs lg:max-w-sm">
               <div className="rounded-2xl p-6 space-y-4" style={{background: 'rgba(13,17,32,0.8)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)'}}>
                 <div className="pb-4 space-y-3" style={{borderBottom: '1px solid rgba(255,255,255,0.08)'}}>
-                  <a href="https://www.google.com/maps/place/Lee+Car+Rental/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                  <a href="https://www.google.com/maps/search/Lee+Car+Rental+Garden+Grove+CA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background: 'rgba(66,133,244,0.15)'}}>
                       <span className="font-bold text-lg" style={{color: '#4285f4'}}>G</span>
                     </div>
@@ -94,7 +94,7 @@ export default function Home() {
         {/* ── Social Proof Bar ──────────────────────────────────── */}
         <section className="py-4" style={{background: '#0a0e1a', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)'}}>
           <div className="max-w-4xl mx-auto px-4 flex flex-wrap items-center justify-center gap-8 md:gap-14">
-            <a href="https://www.google.com/maps/place/Lee+Car+Rental/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
+            <a href="https://www.google.com/maps/search/Lee+Car+Rental+Garden+Grove+CA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
               <span className="font-black text-xl" style={{color: '#4285f4'}}>G</span>
               <div className="flex items-center gap-1">
                 <span className="text-white font-bold text-sm">5.0</span>
@@ -251,7 +251,7 @@ export default function Home() {
               ))}
             </div>
             <div className="text-center mt-8">
-              <a href="https://www.google.com/maps/place/Lee+Car+Rental/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.google.com/maps/search/Lee+Car+Rental+Garden+Grove+CA" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" style={{color: '#ef4444'}}>
                 Read all 211 reviews on Google
                 <ExternalLink className="w-4 h-4" />
