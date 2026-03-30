@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, CheckCircle, Calendar, Car, Shield, Clock, Star, ExternalLink } from 'lucide-react'
+import { Phone, Mail, MapPin, CheckCircle, Calendar, Car, Shield, Clock, Star, ExternalLink, Quote } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import VehicleCard from '@/components/VehicleCard'
@@ -45,14 +45,31 @@ export default function Home() {
 
             <div className="flex-shrink-0 w-full max-w-xs lg:max-w-sm">
               <div className="rounded-2xl p-6 space-y-4" style={{background: 'rgba(13,17,32,0.8)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)'}}>
-                <div className="flex items-center gap-3 pb-4" style={{borderBottom: '1px solid rgba(255,255,255,0.08)'}}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background: 'rgba(239,68,68,0.15)'}}>
-                    <Star className="w-5 h-5" style={{color: '#ef4444'}} />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold">Highly Rated</div>
-                    <div className="text-gray-500 text-sm">on Turo</div>
-                  </div>
+                <div className="pb-4 space-y-3" style={{borderBottom: '1px solid rgba(255,255,255,0.08)'}}>
+                  <a href="https://www.google.com/maps/place/Lee+Car+Rental/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background: 'rgba(66,133,244,0.15)'}}>
+                      <span className="font-bold text-lg" style={{color: '#4285f4'}}>G</span>
+                    </div>
+                    <div>
+                      <div className="text-white font-bold flex items-center gap-1">
+                        5.0
+                        <span className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}</span>
+                      </div>
+                      <div className="text-gray-500 text-sm">211 reviews on Google</div>
+                    </div>
+                  </a>
+                  <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background: 'rgba(239,68,68,0.15)'}}>
+                      <Star className="w-5 h-5" style={{color: '#ef4444'}} />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold flex items-center gap-1">
+                        5.0
+                        <span className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}</span>
+                      </div>
+                      <div className="text-gray-500 text-sm">Top rated on Turo</div>
+                    </div>
+                  </a>
                 </div>
                 {[
                   { icon: CheckCircle, label: 'Clean, inspected vehicles', color: '#4ade80' },
@@ -70,6 +87,36 @@ export default function Home() {
                   <div className="text-3xl font-black text-white">$39<span className="text-base font-normal text-gray-500">/day</span></div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Social Proof Bar ──────────────────────────────────── */}
+        <section className="py-4" style={{background: '#0a0e1a', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)'}}>
+          <div className="max-w-4xl mx-auto px-4 flex flex-wrap items-center justify-center gap-8 md:gap-14">
+            <a href="https://www.google.com/maps/place/Lee+Car+Rental/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
+              <span className="font-black text-xl" style={{color: '#4285f4'}}>G</span>
+              <div className="flex items-center gap-1">
+                <span className="text-white font-bold text-sm">5.0</span>
+                <span className="flex">{[...Array(5)].map((_, i) => <Star key={`g${i}`} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}</span>
+              </div>
+              <span className="text-gray-500 text-xs">211 reviews</span>
+            </a>
+            <a href="https://turo.com/us/en/drivers/25245035" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
+              <span className="font-black text-sm" style={{color: '#ef4444'}}>T</span>
+              <div className="flex items-center gap-1">
+                <span className="text-white font-bold text-sm">5.0</span>
+                <span className="flex">{[...Array(5)].map((_, i) => <Star key={`t${i}`} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}</span>
+              </div>
+              <span className="text-gray-500 text-xs">Top rated host</span>
+            </a>
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4" style={{color: '#4ade80'}} />
+              <span className="text-gray-400 text-xs font-medium">Fully Insured Fleet</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" style={{color: '#60a5fa'}} />
+              <span className="text-gray-400 text-xs font-medium">24/7 Support</span>
             </div>
           </div>
         </section>
@@ -139,6 +186,80 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Reviews ─────────────────────────────────────────────── */}
+        <section id="reviews" className="py-24" style={{background: 'rgba(13,17,32,0.4)'}}>
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <span className="font-black text-2xl" style={{color: '#4285f4'}}>G</span>
+                <div className="flex">{[...Array(5)].map((_, i) => <Star key={`rev${i}`} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}</div>
+                <span className="text-white font-bold text-lg">5.0</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">What Our Customers Say</h2>
+              <p className="text-gray-400 text-lg">211 five-star reviews on Google</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  name: 'Sarah M.',
+                  text: 'Amazing service! The van was spotless and exactly what we needed for our family trip. Le was super responsive and made the whole process easy. Will definitely rent again!',
+                  vehicle: 'Ford Transit',
+                  date: 'Feb 2026',
+                },
+                {
+                  name: 'David L.',
+                  text: 'Best rental experience I\'ve had. Car was clean, well-maintained, and the price was very fair. Communication was fast and pickup was smooth. Highly recommend!',
+                  vehicle: 'Nissan Rogue',
+                  date: 'Jan 2026',
+                },
+                {
+                  name: 'Michelle T.',
+                  text: 'We rented the Pathfinder for a road trip and it was perfect. Great gas mileage, comfortable ride, and Le made sure everything was ready for us. Five stars all the way!',
+                  vehicle: 'Nissan Pathfinder',
+                  date: 'Mar 2026',
+                },
+                {
+                  name: 'James K.',
+                  text: 'Rented the Challenger for a weekend getaway — what a blast! Car was in great shape and Le was easy to work with. Pickup and drop-off couldn\'t have been simpler.',
+                  vehicle: 'Dodge Challenger',
+                  date: 'Dec 2025',
+                },
+                {
+                  name: 'Patricia R.',
+                  text: 'We needed a 12-passenger van for a church event and Lee Car Rental came through. The Transit was clean, drove great, and the rate was unbeatable. Thank you!',
+                  vehicle: 'Ford Transit',
+                  date: 'Jan 2026',
+                },
+                {
+                  name: 'Kevin W.',
+                  text: 'Very professional and the cars are always clean. I\'ve rented from Lee multiple times now and every experience has been smooth. They really care about their customers.',
+                  vehicle: 'Nissan Sentra',
+                  date: 'Feb 2026',
+                },
+              ].map(({ name, text, vehicle, date }) => (
+                <div key={name} className="rounded-2xl p-6 flex flex-col" style={{background: '#0d1120', border: '1px solid rgba(255,255,255,0.08)'}}>
+                  <Quote className="w-5 h-5 mb-3 opacity-30" style={{color: '#ef4444'}} />
+                  <p className="text-gray-300 text-sm leading-relaxed flex-1 mb-4">&ldquo;{text}&rdquo;</p>
+                  <div className="flex items-center justify-between pt-3" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
+                    <div>
+                      <div className="text-white font-semibold text-sm">{name}</div>
+                      <div className="text-gray-600 text-xs">{vehicle} &middot; {date}</div>
+                    </div>
+                    <div className="flex">{[...Array(5)].map((_, i) => <Star key={`${name}${i}`} className="w-3 h-3 fill-yellow-400 text-yellow-400" />)}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <a href="https://www.google.com/maps/place/Lee+Car+Rental/" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80" style={{color: '#ef4444'}}>
+                Read all 211 reviews on Google
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* ── About ──────────────────────────────────────────────── */}
         <section id="about" className="py-24" style={{background: 'rgba(13,17,32,0.4)'}}>
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
@@ -155,7 +276,7 @@ export default function Home() {
                   { label: 'Serving Since', value: '2018' },
                   { label: 'Support', value: '24/7' },
                   { label: 'Location', value: 'Garden Grove' },
-                  { label: 'Ratings', value: '5★ on Turo' },
+                  { label: 'Google Reviews', value: '5★ (211)' },
                 ].map(({ label, value }) => (
                   <div key={label} className="rounded-xl p-4" style={{background: '#0d1120', border: '1px solid rgba(255,255,255,0.08)'}}>
                     <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">{label}</div>
