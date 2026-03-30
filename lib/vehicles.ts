@@ -274,8 +274,8 @@ export function getVehicle(id: string): Vehicle | undefined {
 
 // Pexels CDN — free, no watermarks, no attribution required
 const VEHICLE_PHOTOS: Record<string, number> = {
-  'Transit':           36377064,  // Modern Ford Transit passenger van
-  'Transit-150 Wagon': 36377064,  // Modern Ford Transit passenger van
+  'Transit':           0,         // Local: /transit.jpg
+  'Transit-150 Wagon': 0,         // Local: /transit.jpg
   'Bronco Sport':      10918019,  // Ford Bronco Sport compact SUV
   'Pathfinder':        15804227,  // Nissan Pathfinder
   'Kicks':             20043211,  // Nissan Kicks on road
@@ -285,7 +285,15 @@ const VEHICLE_PHOTOS: Record<string, number> = {
   'Challenger':        10854772,  // Dodge Challenger
 }
 
+// Local overrides for vehicles where we have our own photos
+const LOCAL_PHOTOS: Record<string, string> = {
+  'Transit':           '/transit.jpg',
+  'Transit-150 Wagon': '/transit.jpg',
+}
+
 export function getVehicleImageUrl(vehicle: Vehicle): string {
+  const local = LOCAL_PHOTOS[vehicle.model]
+  if (local) return local
   const id = VEHICLE_PHOTOS[vehicle.model] ?? 15804227
   return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop`
 }
